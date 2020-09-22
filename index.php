@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="author" content="Derrick Abrams">
   <link href="frameworks/css/css.css rel="stylesheet">
-  <script src="js/javascript.js" defer></script>
+  <script src="js/javascript.js"></script>
 </head>
 <body>
   <div style="padding-left:40px">
@@ -12,7 +12,7 @@
         
         <table border="1"> 
          <tr> 
-            <td colspan="4"><input type="text" id="result"/></td> 
+            <td colspan="4"><input type="text" id="answer"/></td> 
             <!-- clr() function will call clr to clear all value -->
          </tr>
          <tr>
@@ -49,5 +49,6 @@
          </tr> 
       </table>   
     </div>
+    <script src="js/javascript.js"></script>
 </body>
 </html>
