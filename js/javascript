@@ -1,0 +1,7 @@
+// Javascript file for the calculator
+
+// Function for displaying value for the calculator
+function dis(num) {
+    document.getElementById('answer').value += num
+}
+
