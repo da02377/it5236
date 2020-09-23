@@ -1,7 +1,35 @@
 // Javascript file for the calculator
-
 // Function for displaying value for the calculator
-function dis(num) {
-    document.getElementById('answer').value += num
-}
+    function dis(num) {
+        document.getElementById('answer').value += num;
+    }
 
+    // Function that solves the equation given
+    function solve() {
+        try {
+            x = document.getElementById('answer').value;
+            y = eval(x);
+            document.getElementById('answer').value = y;
+        }
+        catch(e){
+            console.error(e)
+        }
+          
+    }
+
+    function reset() {
+        document.getElementById('answer').value = '';
+    }
+
+    function sqroot() {
+        x = document.getElementById('answer').value;
+        y = Math.sqrt(x);
+        if (isNaN(y)) {
+            alert('Function is not able to be solved');
+            reset();
+        } else {
+        document.getElementById('answer').value = y;
+        }
+    }
+
+  
