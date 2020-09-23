@@ -16,10 +16,10 @@
             <!-- clr() function will call clr to clear all value -->
          </tr>
          <tr>
-            <td><input type="button" value="AC" onclick="clr()" /></td>
-            <td><input type="button" value="x^y" onlick="dis('^')" /></td>
-            <td><input type="button" value="sqrt" name="dis('sqrrt')" /></td> 
-            <td><input type="button" value="/" name="dis('/')" /></td>
+            <td><input type="button" value="AC" onclick="reset()" /></td>
+            <td><input type="button" value="x^y" onclick="dis('**')" /></td>
+            <td><input type="button" value="sqrt" onclick="sqroot()" /></td> 
+            <td><input type="button" value="/" onclick="dis('/')" /></td>
          </tr>
          <tr> 
             <!-- create button and assign value to each button -->
