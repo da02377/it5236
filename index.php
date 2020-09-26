@@ -7,13 +7,12 @@
   <script src="js/javascript.js"></script>
 </head>
 <body>
-  <div style="padding-left:40px">
+  <div>
         <h2>Calculator</h2>
         
         <table border="1"> 
          <tr> 
             <td colspan="4"><input type="text" id="answer"/></td> 
-            <!-- clr() function will call clr to clear all value -->
          </tr>
          <tr>
             <td><input type="button" value="AC" onclick="reset()" /></td>
@@ -24,10 +23,10 @@
          <tr> 
             <!-- create button and assign value to each button -->
             <!-- dis("1") will call function dis to display value -->
-            <td><input type="button" value="7" onclick="dis('7')"/> </td> 
-            <td><input type="button" value="8" onclick="dis('8')"/> </td> 
-            <td><input type="button" value="9" onclick="dis('9')"/> </td> 
-            <td><input type="button" value="*" onclick="dis('*')"/> </td> 
+            <td><input type="button" value="7" onclick="dis('7')"/></td> 
+            <td><input type="button" value="8" onclick="dis('8')"/></td> 
+            <td><input type="button" value="9" onclick="dis('9')"/></td> 
+            <td><input type="button" value="*" onclick="dis('*')"/></td> 
          </tr> 
          <tr> 
             <td><input type="button" value="4" onclick="dis('4')"/> </td> 
