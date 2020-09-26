@@ -6,9 +6,9 @@
 
     // Function that solves the equation given
     function solve() {
-        x = document.getElementById('answer').value;
-        reg = /\D\D+/g;
-        if (reg !== x) {
+        var x = document.getElementById('answer').value;
+        var re = x.search(/\D\D+/);
+        if (re == -1) {
             y = eval(x);
             document.getElementById('answer').value = y;   
         }
@@ -25,8 +25,8 @@
 
     // Function finds square root once the button is clicked
     function sqroot() {
-        x = document.getElementById('answer').value;
-        y = Math.sqrt(x);
+        var x = document.getElementById('answer').value;
+        var y = Math.sqrt(x);
         if (isNaN(y)) {
             alert('Function is not able to be solved');
             reset();
