@@ -6,21 +6,24 @@
 
     // Function that solves the equation given
     function solve() {
-        try {
-            x = document.getElementById('answer').value;
+        x = document.getElementById('answer').value;
+        reg = /\D\D+/g;
+        if (reg !== x) {
             y = eval(x);
-            document.getElementById('answer').value = y;
+            document.getElementById('answer').value = y;   
         }
-        catch(e){
-            console.error(e)
+        else {
+            alert('Function is not able to be solved');
+            reset();
         }
-          
     }
-
+    
+    // Function that clears the answer bar
     function reset() {
         document.getElementById('answer').value = '';
     }
 
+    // Function finds square root once the button is clicked
     function sqroot() {
         x = document.getElementById('answer').value;
         y = Math.sqrt(x);
@@ -31,5 +34,3 @@
         document.getElementById('answer').value = y;
         }
     }
-
-  
