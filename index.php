@@ -8,9 +8,9 @@
 </head>
 <body>
   <div class = "calculator">
-        <h2>Free Calculator App</h2>        
+        <h2>Calculator App - Derrick Abrams</h2>        
         <form name ="calculator">
-            <input type="text" id="answer"/> 
+            <input readonly type="text" id="answer"/> 
             <br>
             
             <input type="button" value="AC" onclick="reset()" />
@@ -34,7 +34,7 @@
             <br>
          
             <input type="button" value="1" onclick="dis('1')"/> 
-            <input type="button" value="2" onclick="dis('2')"/>> 
+            <input type="button" value="2" onclick="dis('2')"/> 
             <input type="button" value="3" onclick="dis('3')"/> 
             <input type="button" value="-" onclick="dis('-')"/>
             <br>
@@ -42,7 +42,7 @@
             <input type="button" value="0" onclick="dis('0')"/>
             <input type="button" value="." onclick="dis('.')"/>
             <!-- solve function call function solve to evaluate value -->
-            <input type="button" value="=" onclick="solve()"/ style="width:44%"> 
+            <input type="button" value="=" onclick="solve()" style="width:44%"/> 
             <br>  
     </div>
     <script src="js/javascript.js"></script>
