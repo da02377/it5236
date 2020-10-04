@@ -7,13 +7,26 @@
     // Function that solves the equation given
     function solve() {
         var x = document.getElementById('answer').value;
-        var re = x.search(/\D\D+/);
-        if (re == -1) {
+        var re = x.search(/(\D\D+|\/[0]+)/);
+        var twostar = x.search(/([*][*]\d+)/);
+//        var zero = x.search(/\/[0]+/);
+//        alert(zero);
+//        alert(twostar);
+//        alert(re);
+        if (twostar === 1) {
             y = eval(x);
             document.getElementById('answer').value = y;   
         }
+        else if (re === -1) {
+            y = eval(x);
+            document.getElementById('answer').value = y;
+        }
+//        else if (re === -1) {
+//            y = eval(x);
+//            document.getElementById('answer').value = y;
+//        }
         else {
-            alert('Function is not able to be solved');
+            alert('Function is not able to be solved!');
             reset();
         }
     }
@@ -28,9 +41,10 @@
         var x = document.getElementById('answer').value;
         var y = Math.sqrt(x);
         if (isNaN(y)) {
-            alert('Function is not able to be solved');
+            alert('Function is not able to be solved: Answer is NaN!');
             reset();
-        } else {
+        }
+        else {
         document.getElementById('answer').value = y;
         }
     }
