@@ -1,4 +1,4 @@
- /*Source from https://webdevtrick.com/basic-javascript-calculator-source-code/*/
+/* Source from https://webdevtrick.com/basic-javascript-calculator-source-code/
 body, html {
     background: #ECEDEF;
     margin: 0;
@@ -21,7 +21,7 @@ body, html {
 h2 {
     text-align: center;
     color: #920000;
-    /*opacity: 0.1;*/
+    opacity: 0.1;
     font-size: 50px;
     padding: 0;
     margin: 0;
@@ -31,7 +31,7 @@ p {
     text-align: center;
     font-size:20px;
     color: #920000;
-    /*opacity: 0.2;*/
+    opacity: 0.2;
     display: block;
 }
 
@@ -90,4 +90,47 @@ input[type=text] {
     color: #ffffff !important;
     
 }
+*/
 
+h2{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+}
+#calculator{
+  float: center;
+  width: 400px;
+  border: 2px solid black;
+  border-radius: 12px;
+  margin: 0px auto;
+  padding: 20px 20px 100px 20px;
+/*  padding: 20px 20px 100px 20px;*/
+}
+
+input[type=button] {
+  background: #40E0D0;
+  width: 20%;
+  float: center;
+  font-size: 20px;
+  font-weight: 900;
+  border-radius: 7px;
+  margin-left: 13px;
+  margin-top: 10px;
+}
+input[type=button]:active {
+  box-shadow: 0 5px blue;
+  transform: translateY(2px);
+}
+input[type=button]:hover {
+  background-color: orange;
+  color: white;
+}
+input[type = text] {
+  position: relative;
+  display: block;
+  width: 90%;
+  margin: 5px auto;
+  font-size: 20px;
+  padding: 10px;
+  box-shadow: 4px 0px 12px #40E0D0;
+}
