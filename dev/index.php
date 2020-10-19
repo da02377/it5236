@@ -1,8 +1,5 @@
 <?php
-    $servername = "localhost";
-    $username = "phpmyadmin";
-    $password = "irmaabra35";
-    $database = "mysql";
+    // login information
     $conn = new mysqli($servername,$username,$password,$database);
     
     $description = "Page Accessed";
