@@ -1,0 +1,43 @@
+swagger: "2.0"
+info:
+  description: Celsius to Fahrenheit Converter
+  version: '1.0.0'
+  title: Celsius to Fahrenheit Converter
+  contact:
+    email: da02377@georgiasouthern.edu
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: public
+    description: Endpoints made public
+  - name: developers
+    description: Operations available to regular developers
+paths:
+  /converter.php:
+    get:
+      tags:
+        - public
+      summary: converts celsius to fahrenheit
+      operationId: toFahr
+      description: By passing in the appropriate options, you can convert celsius to fahrenheit
+      parameters:
+        - in: query
+          name: celsius
+          description: degrees celsius
+          required: true
+          type: number
+      responses:
+        '200':
+          description: conversion result
+          content:
+            application/json:
+              schema:
+                type: number
+        '400':
+          description: bad input parameter
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /da02377/abrams_final/1.0.0
+schemes:
+ - https
