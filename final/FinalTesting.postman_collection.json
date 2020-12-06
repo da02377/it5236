@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "c1c144fa-6b4b-4cf6-9afa-d929fda8a861",
+		"name": "FinalTesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Postive Test: +5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://derrickabrams.xyz/final/api/v1.0/converter.php?num1=5",
+					"protocol": "https",
+					"host": [
+						"derrickabrams",
+						"xyz"
+					],
+					"path": [
+						"final",
+						"api",
+						"v1.0",
+						"converter.php"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Positive Test: -5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://derrickabrams.xyz/final/api/v1.0/converter.php?num1=-5",
+					"protocol": "https",
+					"host": [
+						"derrickabrams",
+						"xyz"
+					],
+					"path": [
+						"final",
+						"api",
+						"v1.0",
+						"converter.php"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "-5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Negative Test: Letter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://derrickabrams.xyz/final/api/v1.0/converter.php?num1=kjhkj",
+					"protocol": "https",
+					"host": [
+						"derrickabrams",
+						"xyz"
+					],
+					"path": [
+						"final",
+						"api",
+						"v1.0",
+						"converter.php"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "kjhkj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Negative Test: Invalid Characters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://derrickabrams.xyz/final/api/v1.0/converter.php?num1=*/-+",
+					"protocol": "https",
+					"host": [
+						"derrickabrams",
+						"xyz"
+					],
+					"path": [
+						"final",
+						"api",
+						"v1.0",
+						"converter.php"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "*/-+"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
