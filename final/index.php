@@ -12,6 +12,7 @@
 	body {
 		display: block;
 		text-align: center;
+		font-size: 20px;
 	}
   </style>
 </head>
