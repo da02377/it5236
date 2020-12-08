@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "c1c144fa-6b4b-4cf6-9afa-d929fda8a861",
+		"name": "FinalTesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Postive Test: +5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5e7faa23-a34a-4b5c-9b4b-c13bf83378dc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://derrickabrams.xyz/final/api/converter.php?num1=5",
+					"protocol": "https",
+					"host": [
+						"derrickabrams",
+						"xyz"
+					],
+					"path": [
+						"final",
+						"api",
+						"converter.php"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Positive Test: -5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c2deff22-c007-4ff5-9f62-bc2a2dfa4542",
+						"exec": [
+							"pm.test(\"Status code is 200\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://derrickabrams.xyz/final/api/converter.php?num1=-5",
+					"protocol": "https",
+					"host": [
+						"derrickabrams",
+						"xyz"
+					],
+					"path": [
+						"final",
+						"api",
+						"converter.php"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "-5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Negative Test: Letter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c70a0fcb-b1ee-471d-97c2-13876ebba5c7",
+						"exec": [
+							"pm.test(\"Status code is 400\", function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://derrickabrams.xyz/final/api/converter.php?num1=dfsd",
+					"protocol": "https",
+					"host": [
+						"derrickabrams",
+						"xyz"
+					],
+					"path": [
+						"final",
+						"api",
+						"converter.php"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "dfsd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Negative Test: Invalid Characters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf97baa4-a14f-41ca-b577-8a9893f1d910",
+						"exec": [
+							"pm.test(\"Status code is 400\", function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://derrickabrams.xyz/final/api/converter.php?num1=/*-",
+					"protocol": "https",
+					"host": [
+						"derrickabrams",
+						"xyz"
+					],
+					"path": [
+						"final",
+						"api",
+						"converter.php"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "/*-"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
