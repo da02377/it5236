@@ -1,7 +1,10 @@
-swagger: "2.0"
+openapi: 3.0.0
+servers:
+  - description: Production Endpoint
+    url: 'https://derrickabrams.xyz/final/api'
 info:
   description: Celsius to Fahrenheit Converter
-  version: '1.0.0'
+  version: "1.0.0"
   title: Celsius to Fahrenheit Converter
   contact:
     email: da02377@georgiasouthern.edu
@@ -10,34 +13,31 @@ info:
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 tags:
   - name: public
-    description: Endpoints made public
-  - name: developers
-    description: Operations available to regular developers
+    description: Accessible to the public
+  - name: admin
+    description: Accessible to admin only
 paths:
   /converter.php:
     get:
       tags:
         - public
-      summary: converts celsius to fahrenheit
+      summary: Performs caculations
       operationId: toFahr
-      description: By passing in the appropriate options, you can convert celsius to fahrenheit
+      description: Returns the value of two integers
       parameters:
         - in: query
-          name: celsius
-          description: degrees celsius
+          name: num1
+          description: Number to convert to Fahrenheit
           required: true
-          type: number
+          schema:
+            type: integer
       responses:
         '200':
-          description: conversion result
+          description: Respose successful
           content:
             application/json:
               schema:
                 type: number
+                format: date-time
         '400':
           description: bad input parameter
-# Added by API Auto Mocking Plugin
-host: virtserver.swaggerhub.com
-basePath: /da02377/abrams_final/1.0.0
-schemes:
- - https
