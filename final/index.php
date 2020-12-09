@@ -1,3 +1,43 @@
+<?php
+# Derrick Abrams
+# Final Exam Converter
+
+# Code built from Russell Thackston's Zoom Lecture
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	
+	$num1 = intval($_POST['num1']);
+	
+	# Google cloud endpoint
+	$endpoint = "https://us-east1-it-5236-abrams-lamp.cloudfunctions.net/function-toFahr";
+	
+	# Convert to JSON
+	$ary = array('num1' => $num1);
+	$json = json_encode($ary);
+	
+# Curl PhP by Postman Code Snippet
+	$curl = curl_init();
+
+	curl_setopt_array($curl, array(
+	  CURLOPT_URL => $endpoint,
+	  CURLOPT_RETURNTRANSFER => true,
+	  CURLOPT_ENCODING => '',
+	  CURLOPT_MAXREDIRS => 10,
+	  CURLOPT_TIMEOUT => 0,
+	  CURLOPT_FOLLOWLOCATION => true,
+	  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+	  CURLOPT_CUSTOMREQUEST => 'POST',
+	  CURLOPT_POSTFIELDS => $json,
+	  CURLOPT_HTTPHEADER => array(
+		"Content-Type: application/json"
+	)));
+
+	$response = curl_exec($curl);
+	curl_close($curl);
+
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,31 +61,19 @@
 	<h4>By Derrick Abrams</h4>
 
 	<br><br>	
-		
-	<label>Degrees Celsius: </label>
-	<input type="number" id="celsius" name="input" placeholder="0" pattern="[0-9]+">
-		
-	<br>
-	<script>
-	function solve() {
-		var cels = document.getElementById("celsius").value;
-		// Formula from https://www.rapidtables.com/convert/temperature/how-celsius-to-fahrenheit.html
-		var toFahr = (cels * (9/5)) + 32;
-		document.getElementById("answer").innerHTML = toFahr + "&#x2109;";
-	}	
-
-	</script>
 	
-	<br>	
-	<input type="button" value="SOLVE" onclick="solve()"/>
+	<form action='index.php' method='POST'>
+		<label>Degrees Celsius: </label>
+		<!-- Pattern regex from  https://www.w3schools.com/tags/att_input_pattern.asp -->
+		<input type="number" id="num1" name="num1" placeholder="0" pattern="[0-9]+" value="<?php echo $num1; ?>"><br><br>
+		<input type="submit" value="SOLVE"/>
+	</form>
 
 	<br><br>
 
-	<h2 id="answer"></h2>
-		
-	<br><br>
-
-	<input type="button" value="Reset" onclick="document.location.reload(true)"/>
+	<h2 id="answer">
+	<?php echo $response; ?>&#xb0; Fahrenheit
+	</h2>
 		
 </body>
 </html>
